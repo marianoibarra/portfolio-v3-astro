@@ -1,0 +1,27 @@
+---
+import { Icon } from 'astro-icon';
+import { SOCIAL_MEDIA } from '../config'
+---
+
+<ul class="social">
+  { SOCIAL_MEDIA.map(({name, icon, url}) => 
+    <li>
+      <a href={url} aria-label={name} target="_blank" rel="noopener noreferrer" title={name}>
+        <Icon name={icon} />
+      </a>
+    </li>
+  )}
+  
+</ul>
+
+<style>
+  .social {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    & li { list-style: none; }
+    & svg { height: 28px; }
+  }
+</style>

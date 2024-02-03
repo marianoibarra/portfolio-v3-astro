@@ -1,0 +1,66 @@
+---
+import EasterEggHover from '../elements/EasterEggHover.astro'
+import { SKILLS } from '../config';
+
+const SKILLS_COLUMNS = 3
+---
+
+<section id="about">  
+  <h3 class="section-title">
+    About
+  </h3>
+  <div class="about-text">
+      <p>
+        <strong>Fullstack developer</strong>, with experience in both web projects and mobile. I am passionate about creating
+        intuitive, interactive, and visually appealing interfaces that provide an exceptional user experience.
+      </p>
+      <p>
+        For 7 years, I worked as a team leader and restaurant supervisor until 2020 when I decided to shift my focus
+        towards learning and working in the programming world. There, I found the perfect fusion of my passions: <strong>
+        technology,</strong> <strong>design,</strong> <strong>solution creation,</strong> and <strong>problem-solving</strong>. This transition enabled me to leverage my
+        analytical skills and effectively collaborate within teams.
+      </p>
+      <p>
+        I am constantly updating my knowledge and exploring new technologies to continue growing professionally. My
+        goal is to keep challenging myself and contribute to exciting projects that drive technological development.
+      </p>
+      <p>When I'm not at the computer, you'll usually find me cycling, reading, or having fun with <EasterEggHover value='Balti'/>.</p>
+      <p>Here are a few technologies I’ve been working with recently:</p>
+  </div>
+  <ul class="skills-list">
+    { SKILLS.map(skill => <li>{ skill }</li>) }
+  </ul>
+</section>
+
+<style define:vars={{SKILLS_COLUMNS}}>
+  .about-text {
+    font-size: var(--fz-md);
+    line-height: 26px;
+    margin-bottom: 24px;
+    cursor: default;
+  }
+  .skills-list {
+    font-size: var(--fz-md);
+    columns: var(--SKILLS_COLUMNS);
+    & li {
+      position: relative;
+      margin-bottom: 10px;
+      padding-left: 20px;
+      font-family: var(--font-mono);
+      font-size: var(--fz-xs);
+      transition: var(--transition);
+      cursor: default;
+    }
+    & li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-size: var(--fz-sm);
+      line-height: 12px;
+    }
+    & li:hover {
+      color: var(--white);
+    }
+  }
+</style>

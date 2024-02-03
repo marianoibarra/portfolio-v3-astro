@@ -1,0 +1,86 @@
+---
+import { Icon } from 'astro-icon'
+import { Image } from 'astro:assets';
+import ChipList from './ChipList.astro'
+interface Props {
+    project: {
+      body: string,
+      data: {
+        date: string,
+        title: string,
+        github: string,
+        cover: string,
+        external: string,
+        showInProjects: boolean,
+        tech: string[]
+      }
+    }
+  }
+const { project: { body, data: { title, tech, github, external, cover }}} = Astro.props
+const images = import.meta.glob<{default: ImageMetadata}>('/src/content/projects/assets/*.{jpeg,jpg,png,gif}')
+---
+
+<li class="card-section">
+  <Image src={images[cover]()} alt={title} width={125} height={100} />
+  <div class="card-data">
+    <h3>
+      <a href={external}>
+        {title}
+        <Icon name="external" />
+        <span class="hover-glass"/>
+      </a>
+    </h3>
+    <p>{ body }</p>
+    <a class="github" href={github}>
+      <Icon name="github" />
+      Source code
+    </a>
+    <ChipList values={tech} />
+  </div>
+</li>
+
+<style>
+  .github {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    color: var(--white);
+    font-weight: 500;
+    font-size: var(--fz-xs);
+    z-index: 2;
+    &:hover { color: var(--green) };
+  }
+
+  img {
+    display: flex;
+    width: 100%;
+    max-width: 200px;
+    height: min-content;
+    grid-column: 1/2;
+    border-radius: 4px;
+    overflow: hidden;
+    border: var(--img-border);
+    background-color: var(--darkest-slate);
+    transition: all 150ms var(--easing);
+  }
+
+  @media screen and (max-width: 640px) {
+    .card-data {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .card-section {
+      grid-gap: 24px;
+    }
+
+    img {
+      grid-column: 1;
+      grid-row: 2;
+      aspect-ratio: 16/10;
+    }
+  } 
+
+</style>

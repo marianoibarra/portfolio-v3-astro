@@ -1,0 +1,82 @@
+---
+import { Icon } from 'astro-icon'
+import ChipList from './ChipList.astro'
+interface Props {
+  job: {
+    body: string,
+    data: {
+      date: string,
+      title: string,
+      company: string,
+      location: string,
+      range: string,
+      url: string,
+      tech: string[]
+    }
+  }
+}
+const { job: { body, data: { range, title, url, tech, company }}} = Astro.props
+---
+
+<li class="card-section s-job">
+  <header>{range}</header>
+  <div class="card-data d-job">
+    <h3>
+      { title }
+      <a href={url}>
+        {company}
+        <Icon name="external" />
+        <span class="hover-glass"/>
+      </a>
+    </h3>
+    <p>{ body }</p>
+    <ChipList values={tech} />
+  </div>
+</li>
+
+
+<style>
+  .s-job header {
+    grid-column: 1/2;
+    font-size: var(--fz-xxs);
+    white-space: nowrap;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    color: var(--dark-slate);
+    font-weight: 600;
+  }
+  @media screen and (max-width: 640px) {
+    .s-job header {
+      grid-column: 1;
+      grid-row: 1;
+    }
+  }
+
+  .d-job {
+    > h3 > a {
+      color: var(--light-slate);
+      transition: all 150ms var(--easing);
+      &:hover,
+      &:focus-visible {
+        color: var(--green);
+      }
+      &::before {
+        position: relative;
+        bottom: 2px;
+        margin-inline: 8px;
+        margin-left: 8px;
+        margin-right: 4px;
+        font-size: var(--fz-sm);
+        color: var(--green);
+        content: "@"
+      }
+    }
+    @media screen and (max-width: 640px) {
+      .d-job {
+        grid-column: 1;
+        grid-row: 2;
+      }
+    }
+  }
+</style>

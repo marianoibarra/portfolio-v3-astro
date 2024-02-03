@@ -1,0 +1,34 @@
+---
+interface Props {
+  values: string[]
+}
+const { values } = Astro.props
+---
+{Array.isArray(values) && values.length > 0 && (
+  <ul>
+    { values.map(value => <li>{value}</li>) }
+  </ul>
+)}
+
+<style>
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 8px;
+    margin-top: 24px;
+
+    & li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--green-tint);
+      padding-inline: 12px;
+      color: var(--green);
+      font-size: var(--fz-xs);
+      font-weight: 500;
+      border-radius: 28px;
+      height: 28px;
+    }
+  }
+</style>

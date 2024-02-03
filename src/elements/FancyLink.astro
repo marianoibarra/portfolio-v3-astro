@@ -1,0 +1,68 @@
+---
+import { Icon } from 'astro-icon';
+interface Props {
+  mt?: number,
+  icon?: string
+}
+
+const { mt = 0, icon = 'arrow' } = Astro.props
+---
+
+<div style={{marginTop: mt + 'px'}}>
+  <span>
+    <slot />
+  </span>
+  <Icon name={icon} />
+</div>
+
+<style>
+  div {
+    width: auto;
+    font-size: var(--fz-md);
+    gap: 4px;
+    color: var(--white);
+    font-weight: 500;
+    opacity: .85;
+    cursor: pointer;
+
+    > span {
+      display: inline-block;
+      position: relative;
+      margin-right: 4px;
+    }
+
+    > span::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      position: relative;
+      bottom: 0.05em;
+      background-color: var(--green);
+      opacity: 0.5;
+      transition: all 150ms var(--easing);
+    }
+
+    > svg {
+      display: inline;
+      width: 16px;
+      height: 16px;
+      transition: all 150ms var(--easing);
+    }
+
+    &:hover,
+    &:focus-visible {
+      > span {
+        opacity: 1;
+        
+        &:after {
+          width: 100%;
+        }
+      }
+
+      > svg {
+        transform: translateX(6px);
+      }
+    }
+  }
+</style>

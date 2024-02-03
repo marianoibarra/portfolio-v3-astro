@@ -1,0 +1,39 @@
+---
+interface Props {
+  value: string,
+}
+
+const { value } = Astro.props
+const letters = value.split('')
+---
+<span class="highlight-hover">
+  <span aria-hidden="true">{value}</span>
+  {letters.map((letter, i) => <span class="letter" style={{transitionDuration: `${i*90}ms`}}>{letter}</span>)}
+</span>
+
+<style>
+  .highlight-hover {
+    cursor: url('/cursor/balti.png'),default !important;
+    position: relative;
+    display: inline-flex;
+
+    &:hover .letter {
+      color: orange;
+      font-weight: 700;
+      transform: translateY(-2px);
+    }
+
+    span:first-child {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+  }
+
+  .letter {
+    color: var(--white);
+    font-weight: 600;
+    transition: all var(--easing);
+  }
+</style>

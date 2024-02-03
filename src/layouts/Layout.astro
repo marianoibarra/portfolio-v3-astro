@@ -1,0 +1,101 @@
+---
+import Hero from '../components/Hero.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Social from '../components/Social.astro';
+import MouseEffect from '../elements/MouseEffect.astro';
+
+import '../styles/variables.css'
+import '../styles/fonts.css'
+import '../styles/global.css'
+import '../styles/responsive.css'
+
+import { TITLE, DESCRIPTION } from '../config';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={ DESCRIPTION } />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{ TITLE }</title>
+	</head>
+	<body>
+		<div id="root">
+			<MouseEffect />
+			<div class="layout">
+				<header>
+					<Hero />
+					<Nav  />
+					<Social />
+				</header>
+				<main id="content">
+					<slot />
+					<Footer />
+				</main>		
+			</div>
+		</div>
+	</body>
+</html>
+
+<style>
+	.layout {
+		width: 100%;
+		max-width: var(--max-width);
+		min-height: 100vh;
+		margin: 0 auto;
+		padding: 0px var(--body-padding);
+		display: flex;
+		counter-reset: section 0;
+		gap: 1rem;
+		
+		> header {
+			position: sticky;
+			top: 0;
+			height: 100vh;
+			width: 50%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			padding: var(--body-padding) 0;
+		}
+
+		> main {
+			width: 50%;
+			padding: 0;
+			padding-bottom: var(--body-padding);
+
+			@media screen and (min-width: 768px) {
+				&:has(#projects li:hover) #jobs li,
+				&:has(#jobs li:hover) #projects li {
+					opacity: 0.5;
+				}
+			}
+		}
+
+		@media screen and (max-width: 1024px) {
+			flex-direction: column;
+			padding: 96px 48px;
+
+			> header {
+				position: relative;
+				width: 100%;
+				height: auto;
+				gap: 28px;
+				justify-content: flex-start;
+				padding: 0;
+			}
+			
+			> main {
+				width: 100%;
+				padding: 96px 0 0;
+			}
+		}
+		@media screen and (max-width: 768px) {
+			padding: 48px 24px;
+		}
+	}
+</style>

@@ -1,0 +1,42 @@
+---
+import FancyLink from '../elements/FancyLink.astro'
+import CardJob from '../elements/CardJob.astro'
+import { getCollection } from 'astro:content';
+
+const allJobs = await getCollection('jobs');
+allJobs.sort((a, b) => Number(new Date(b?.data?.date)) - Number(new Date(a?.data?.date)))
+---
+
+<section id="jobs">
+  <h3 class="section-title">
+    Experience
+  </h3>
+  <ol>
+    { allJobs.map(job => <CardJob job={job} />) }
+  </ol>
+  <a href="/download/resume.pdf">
+    <FancyLink mt={56}>
+      View Full Resume
+    </FancyLink>
+  </a>
+</section>
+
+<style>
+  #jobs {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    > ol {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    > a {
+      width: fit-content;
+    }
+  }
+</style>

@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import CardProject from '../elements/CardProject.astro';
+
+const allProjects = await getCollection('projects');
+allProjects.filter(project => project.data?.showInProjects).sort((a, b) => Number(new Date(b?.data?.date)) - Number(new Date(a?.data?.date)))
+---
+
+<section id="projects"> 
+  <h3 class="section-title">
+    Projects
+  </h3>
+  <ol>
+    { allProjects.map(project => <CardProject project={project} />) }
+    </ol>
+</section>
+
+<style>
+  section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+    > ol {
+      display: flex;
+      flex-direction: column;
+      gap: 64px;
+    }
+  }
+</style>

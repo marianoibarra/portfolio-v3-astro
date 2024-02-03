@@ -1,0 +1,40 @@
+@media screen and (max-width: 640px) {
+  .card-section {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, min-content);
+    grid-gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    margin-left: -24px;
+    padding: 20px 24px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .section-title {
+    position: sticky;
+    width: 100vw;
+    font-family: var(--font-sans);
+    font-size: var(--fz-lg);
+    top: 0;
+    margin-bottom: 24px;
+    margin-left: -48px;
+    padding: 20px 48px;
+    backdrop-filter: var(--title-blur);
+    background-color: var(--title-bg);
+    z-index: 20;
+  
+    &:after {
+      bottom: 8px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .card-section:has(~ *:hover), .card-section:hover ~* { 
+    opacity: .5 
+  };
+}
