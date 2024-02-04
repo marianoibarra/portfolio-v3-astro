@@ -1,0 +1,36 @@
+{
+  "SITE_TITLE": "Mariano Ibarra",
+  "SITE_DESCRIPTION": "Mariano Ibarra es un ingeniero de software que crea experiencias digitales excepcionales para la web.",
+
+  "LANGUAGE_SWITCH_TO": "Switch to English",
+
+  "HERO_HEADER": "Hola, mi nombre es",
+  "HERO_SUBTITLE": "Construyendo experiencias digitales excepcionales.",
+
+  "LINKS": {
+    "#about": "Acerca de mí",
+    "#jobs": "Experiencia laboral",
+    "#projects": "Proyectos"
+  },
+
+  "ABOUT_TITLE": "Acerca de mí",
+  "ABOUT_BODY_1": "<strong>Fullstack developer</strong>, con experiencia en el desarrollo de proyectos tanto web como móviles. Mi fascinación por la creación de interfaces intuitivas, interactivas y visualmente atractivas se traduce en el diseño de experiencias de usuario excepcionales.",
+  "ABOUT_BODY_2": "Mi trayectoria incluye 7 años liderando equipos como supervisor regional de restaurantes hasta el 2020, momento en el que decidí cambiar mi enfoque y sumergirme en el emocionante mundo de la programación. Encontré en esta transición la fusión perfecta de todas mis pasiones: <strong>la tecnología,</strong> <strong>el diseño,</strong> <strong>la creación de soluciones,</strong> y <strong>la resolución de problemas</strong>. Esta transformación no solo me permitió aprovechar mis habilidades analíticas sino también colaborar de manera efectiva en equipos multidisciplinarios.",
+  "ABOUT_BODY_3": "Siempre me encuentro en la búsqueda constante de la actualización de mis conocimientos, explorando nuevas tecnologías para seguir creciendo profesionalmente. Mi objetivo es enfrentar desafíos continuos y contribuir a proyectos apasionantes que impulsen el desarrollo tecnológico.",
+  "ABOUT_BODY_4": "Cuando no estoy frente a una computadora, me encontrarás andando en bicicleta, sumergido en la lectura de un buen libro o dando un paseo con ",
+  "ABOUT_BODY_5": "Aquí tienes algunas de las tecnologías con las que he estado trabajando recientemente:",
+
+  "JOBS_TITLE": "Experiencia laboral",
+  "JOBS_DOWNLOAD": "Ver CV completo",
+
+  "PROJECTS_TITLE": "Proyectos",
+  "PROJECTS_SOURCE": "Código fuente",
+
+  "FOOTER_PART_1": "Diseñado en",
+  "FOOTER_PART_2": "y desarrollado en",
+  "FOOTER_PART_3": "por su servidor. Construido con",
+  "FOOTER_PART_4": "y desplegado en",
+  "FOOTER_PART_5": "Todo el texto está escrito en tipografía",
+  "FOOTER_PART_6": "y",
+  "FOOTER_PART_7": ""
+}

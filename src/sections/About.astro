@@ -1,31 +1,33 @@
 ---
-import EasterEggHover from '../elements/EasterEggHover.astro'
+import EasterEggHover from '../components/EasterEggHover.astro'
 import { SKILLS } from '../config';
+import { getI18N } from '../i18n';
 
 const SKILLS_COLUMNS = 3
+const {
+  ABOUT_TITLE,
+  ABOUT_BODY_1,
+  ABOUT_BODY_2,
+  ABOUT_BODY_3,
+  ABOUT_BODY_4,
+  ABOUT_BODY_5,
+} = getI18N(Astro.currentLocale)
+
+
 ---
 
 <section id="about">  
   <h3 class="section-title">
-    About
+    {ABOUT_TITLE}
   </h3>
   <div class="about-text">
+      <p set:html={ABOUT_BODY_1} />
+      <p set:html={ABOUT_BODY_2} />
+      <p set:html={ABOUT_BODY_3} />
       <p>
-        <strong>Fullstack developer</strong>, with experience in both web projects and mobile. I am passionate about creating
-        intuitive, interactive, and visually appealing interfaces that provide an exceptional user experience.
+        {ABOUT_BODY_4} <EasterEggHover value='Balti'/>
       </p>
-      <p>
-        For 7 years, I worked as a team leader and restaurant supervisor until 2020 when I decided to shift my focus
-        towards learning and working in the programming world. There, I found the perfect fusion of my passions: <strong>
-        technology,</strong> <strong>design,</strong> <strong>solution creation,</strong> and <strong>problem-solving</strong>. This transition enabled me to leverage my
-        analytical skills and effectively collaborate within teams.
-      </p>
-      <p>
-        I am constantly updating my knowledge and exploring new technologies to continue growing professionally. My
-        goal is to keep challenging myself and contribute to exciting projects that drive technological development.
-      </p>
-      <p>When I'm not at the computer, you'll usually find me cycling, reading, or having fun with <EasterEggHover value='Balti'/>.</p>
-      <p>Here are a few technologies I’ve been working with recently:</p>
+      <p set:html={ABOUT_BODY_5} />
   </div>
   <ul class="skills-list">
     { SKILLS.map(skill => <li>{ skill }</li>) }

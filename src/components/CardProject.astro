@@ -2,22 +2,16 @@
 import { Icon } from 'astro-icon'
 import { Image } from 'astro:assets';
 import ChipList from './ChipList.astro'
+import type { Project } from '../content/config';
+import { getI18N } from '../i18n';
+
 interface Props {
-    project: {
-      body: string,
-      data: {
-        date: string,
-        title: string,
-        github: string,
-        cover: string,
-        external: string,
-        showInProjects: boolean,
-        tech: string[]
-      }
-    }
-  }
+  project: Project
+}
 const { project: { body, data: { title, tech, github, external, cover }}} = Astro.props
 const images = import.meta.glob<{default: ImageMetadata}>('/src/content/projects/assets/*.{jpeg,jpg,png,gif}')
+
+const { PROJECTS_SOURCE } = getI18N(Astro.currentLocale)
 ---
 
 <li class="card-section">
@@ -33,7 +27,7 @@ const images = import.meta.glob<{default: ImageMetadata}>('/src/content/projects
     <p>{ body }</p>
     <a class="github" href={github}>
       <Icon name="github" />
-      Source code
+      {PROJECTS_SOURCE}
     </a>
     <ChipList values={tech} />
   </div>
@@ -50,7 +44,7 @@ const images = import.meta.glob<{default: ImageMetadata}>('/src/content/projects
     font-weight: 500;
     font-size: var(--fz-xs);
     z-index: 2;
-    &:hover { color: var(--green) };
+    & :hover { color: var(--green) };
   }
 
   img {

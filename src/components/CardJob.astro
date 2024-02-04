@@ -1,19 +1,9 @@
 ---
 import { Icon } from 'astro-icon'
 import ChipList from './ChipList.astro'
+import type { Job } from '../content/config'
 interface Props {
-  job: {
-    body: string,
-    data: {
-      date: string,
-      title: string,
-      company: string,
-      location: string,
-      range: string,
-      url: string,
-      tech: string[]
-    }
-  }
+  job: Job
 }
 const { job: { body, data: { range, title, url, tech, company }}} = Astro.props
 ---

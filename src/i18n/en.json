@@ -1,0 +1,36 @@
+{
+  "SITE_TITLE": "Mariano Ibarra",
+  "SITE_DESCRIPTION": "Mariano Ibarra is a software engineer who builds exceptional digital experiences for the web.",
+
+  "LANGUAGE_SWITCH_TO": "Ver en español",
+
+  "HERO_HEADER": "Hi, my name is",
+  "HERO_SUBTITLE": "Building exceptional digital experiences.",
+
+  "LINKS": {
+    "#about": "About",
+    "#jobs": "Jobs",
+    "#projects": "Projects"
+  },
+
+  "ABOUT_TITLE": "About",
+  "ABOUT_BODY_1": "<strong>Fullstack developer</strong>, with extensive experience in both web and mobile projects. My enthusiasm lies in crafting intuitive, interactive, and visually appealing interfaces that deliver exceptional user experiences.",
+  "ABOUT_BODY_2": "My journey includes 7 years leading teams as a regional restaurant supervisor until 2020 when I decided to shift my focus and dive into the exciting world of programming. In this transition, I found the perfect amalgamation of all my passions: <strong> technology,</strong> <strong>design,</strong> <strong>solution creation,</strong> and <strong>problem-solving</strong>. This shift not only allowed me to leverage my analytical skills but also to collaborate effectively within multidisciplinary teams.",
+  "ABOUT_BODY_3": "I am constantly updating my knowledge and exploring new technologies to continue growing professionally. My goal is to embrace continuous challenges and contribute to exciting projects that drive technological development.",
+  "ABOUT_BODY_4": "When I'm not at the computer, you'll usually find me cycling, immersed in the pages of a good book, or taking a stroll with ",
+  "ABOUT_BODY_5": "Here are some of the technologies I've been working with recently:",
+
+  "JOBS_TITLE": "Experience",
+  "JOBS_DOWNLOAD": "View Full Resume",
+
+  "PROJECTS_TITLE": "Projects",
+  "PROJECTS_SOURCE": "Source code",
+
+  "FOOTER_PART_1": "Loosely designed in",
+  "FOOTER_PART_2": "and coded in",
+  "FOOTER_PART_3": "by yours truly. Built with",
+  "FOOTER_PART_4": "and deployed with",
+  "FOOTER_PART_5": "All text is set in",
+  "FOOTER_PART_6": "and",
+  "FOOTER_PART_7": " typeface"
+}

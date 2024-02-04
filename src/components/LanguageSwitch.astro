@@ -1,0 +1,29 @@
+---
+import { Icon } from 'astro-icon';
+import { getI18N } from '../i18n';
+
+const { currentLocale } = Astro
+const url = currentLocale === 'es' ? '/' : '/es'
+const {LANGUAGE_SWITCH_TO: lang} = getI18N(currentLocale)
+---
+
+<a href={url}>
+  <Icon name="language2" />
+  {lang}
+</a>
+
+<style>
+  a {
+    width: fit-content;
+    display: flex;
+    font-size: 14px;
+    /* text-transform: uppercase; */
+    text-wrap: nowrap;
+    align-items: center;
+    gap: 8px;
+    margin: 18px 0;
+    font-weight: 500;
+
+    svg { height: 24px; }
+  }
+</style>

@@ -1,22 +1,27 @@
 ---
-import FancyLink from '../elements/FancyLink.astro'
-import CardJob from '../elements/CardJob.astro'
+import FancyLink from '../components/FancyLink.astro'
+import CardJob from '../components/CardJob.astro'
 import { getCollection } from 'astro:content';
+import { getI18N } from '../i18n';
 
-const allJobs = await getCollection('jobs');
-allJobs.sort((a, b) => Number(new Date(b?.data?.date)) - Number(new Date(a?.data?.date)))
+const { JOBS_TITLE, JOBS_DOWNLOAD } = getI18N(Astro.currentLocale)
+
+const jobs = await getCollection('jobs', job => job.slug.split('/')[0] === Astro.currentLocale);
+jobs.sort((a, b) => Number(new Date(b?.data?.date)) - Number(new Date(a?.data?.date)))
+
+
 ---
 
 <section id="jobs">
   <h3 class="section-title">
-    Experience
+    { JOBS_TITLE }
   </h3>
   <ol>
-    { allJobs.map(job => <CardJob job={job} />) }
+    { jobs.map(job => <CardJob job={job} />) }
   </ol>
   <a href="/download/resume.pdf" title="Download resume">
     <FancyLink mt={56}>
-      View Full Resume
+      { JOBS_DOWNLOAD }
     </FancyLink>
   </a>
 </section>

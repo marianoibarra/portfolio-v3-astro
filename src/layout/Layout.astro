@@ -1,27 +1,29 @@
 ---
-import Hero from '../components/Hero.astro';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
-import Social from '../components/Social.astro';
-import MouseEffect from '../elements/MouseEffect.astro';
+import Hero from './Hero.astro';
+import Nav from './Nav.astro';
+import Footer from './Footer.astro';
+import Social from './Social.astro'
+import MouseEffect from '../components/MouseEffect.astro';
+import LanguageSwitch from '../components/LanguageSwitch.astro';
+import { getI18N } from '../i18n'
 
 import '../styles/variables.css'
 import '../styles/fonts.css'
 import '../styles/global.css'
 import '../styles/responsive.css'
 
-import { TITLE, DESCRIPTION } from '../config';
+const { SITE_TITLE, SITE_DESCRIPTION } = getI18N(Astro.currentLocale)
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={Astro.currentLocale}>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={ DESCRIPTION } />
+		<meta name="description" content={ SITE_DESCRIPTION } />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{ TITLE }</title>
+		<title>{ SITE_TITLE }</title>
 	</head>
 	<body>
 		<div id="root">
@@ -30,7 +32,11 @@ import { TITLE, DESCRIPTION } from '../config';
 				<header>
 					<Hero />
 					<Nav  />
-					<Social />
+					<div class="row">
+						<Social />
+						<div class="divider"/>
+						<LanguageSwitch />
+					</div>
 				</header>
 				<main id="content">
 					<slot />
@@ -98,4 +104,17 @@ import { TITLE, DESCRIPTION } from '../config';
 			padding: 48px 24px;
 		}
 	}
+
+	.row {
+		display: flex;
+		align-items: center;
+		gap: 28px;
+	}
+
+	.divider {
+    height: 24px;
+    width: 1px;
+		margin-right: -4px;
+    background-color: var(--dark-slate);
+  }
 </style>

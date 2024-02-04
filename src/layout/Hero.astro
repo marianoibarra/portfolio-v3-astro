@@ -1,10 +1,13 @@
 ---
+import { getI18N } from "../i18n"
+
+  const { HERO_HEADER, HERO_SUBTITLE } = getI18N(Astro.currentLocale)
 ---
 
 <div class="hero">
-  <p>Hi, my name is</p>
+  <p>{HERO_HEADER}</p>
   <h1>Mariano Ibarra</h1>
-  <h2>Building exceptional digital experiences.</h2>
+  <h2>{HERO_SUBTITLE}</h2>
 </div>
 
 <style>

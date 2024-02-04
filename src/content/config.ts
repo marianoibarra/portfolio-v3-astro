@@ -27,3 +27,29 @@ const projects = defineCollection({
 })
 
 export const collections = { jobs, projects }
+
+export type Job = {
+  body: string,
+  data: {
+    date: string,
+    title: string,
+    company: string,
+    location: string,
+    range: string,
+    url: string,
+    tech: string[]
+  }
+}
+
+export type Project = {
+  body: string,
+  data: {
+    date: string,
+    title: string,
+    github: string,
+    cover: string,
+    external: string,
+    showInProjects: boolean,
+    tech: string[]
+  }
+}

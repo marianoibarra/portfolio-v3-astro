@@ -1,0 +1,44 @@
+---
+import { getI18N } from "../i18n"
+
+const { 
+  FOOTER_PART_1,
+  FOOTER_PART_2,
+  FOOTER_PART_3,
+  FOOTER_PART_4,
+  FOOTER_PART_5,
+  FOOTER_PART_6,
+  FOOTER_PART_7
+} = getI18N(Astro.currentLocale)
+---
+
+<footer>
+  <p>
+    {FOOTER_PART_1} <a href="https://www.figma.com/">Figma</a>
+    {FOOTER_PART_2} <a href="https://code.visualstudio.com/">Visual Studio Code</a>
+    {FOOTER_PART_3} <a href="https://www.astro.build/">Astro</a>,
+    {FOOTER_PART_4} <a href="https://vercel.com/">Vercel</a>.
+    {FOOTER_PART_5} <a href="https://rsms.me/inter/">Inter</a> 
+    {FOOTER_PART_6} <a href="https://developer.apple.com/fonts/">SF Mono</a>{FOOTER_PART_7}.
+  </p>
+</footer>
+
+<style>
+  footer {
+    width: 100%;
+    max-width: 430px;
+    font-size: var(--fz-sm);
+    color: var(--dark-slate);
+    margin-top: 128px;
+    cursor: default;
+    & a {
+      color: var(--slate);
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    footer {
+      margin-top: 64px;
+    }
+  }
+</style>

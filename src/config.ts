@@ -1,6 +1,4 @@
 const config = {
-  TITLE: 'Mariano Ibarra',
-  DESCRIPTION: "Mariano Ibarra is a software engineer who builds exceptional digital experiences for the web.",
   SOCIAL_MEDIA: [
     {
       name: 'GitHub',
@@ -19,24 +17,17 @@ const config = {
     },
   ],
   NAV_LINKS: [
-    {
-      name: 'About',
-      url: '/#about',
-    },
-    {
-      name: 'Experience',
-      url: '/#jobs',
-    },
-    {
-      name: 'Projects',
-      url: '/#projects',
-    },
+    '#about',
+    '#jobs',
+    '#projects'
   ],
   SKILLS: [
     "JavaScript (ES6+)",
     "TypeScript",
+    "Astro",
     "React",
     "React Native",
+    "Angular",
     "Next.js",
     "Gatsby",
     "Node.js",
@@ -57,8 +48,6 @@ const config = {
 }
   
 export const {
-  TITLE, 
-  DESCRIPTION,
   SOCIAL_MEDIA,
   NAV_LINKS,
   SKILLS,

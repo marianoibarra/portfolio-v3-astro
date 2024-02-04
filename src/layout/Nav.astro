@@ -1,5 +1,8 @@
 ---
 import { NAV_LINKS } from "../config";
+import { getI18N, getLangFromUrl } from "../i18n";
+const { LINKS } : { LINKS: {[key: string]: string} } = getI18N(Astro.currentLocale)
+
 ---
 <script>
   import { SECTION_HEIGHT_RATIO } from "../config";
@@ -21,13 +24,17 @@ import { NAV_LINKS } from "../config";
 
 <nav>
   <ul>
-    {NAV_LINKS.map(({name, url}) => 
-      <li>
-        <a href={url}>
-          <span/>
-          <span>{name}</span>
-        </a>
-      </li>
+    {NAV_LINKS.map(url => {
+      const lang = getLangFromUrl(Astro.url)
+      return (
+        <li>
+          <a href={`${lang}${url}`}>
+            <span/>
+            <span>{LINKS[url]}</span>
+          </a>
+        </li>
+        )
+      }
     )}
   </ul>
 </nav>
@@ -50,6 +57,7 @@ import { NAV_LINKS } from "../config";
 
   li {
     width: min-content;
+    text-wrap: nowrap;
     margin-bottom: 18px;
     font-size: var(--fz-sm) !important;
     font-family: var(--font-mono);
