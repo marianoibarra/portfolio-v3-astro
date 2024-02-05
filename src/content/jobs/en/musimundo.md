@@ -15,4 +15,4 @@ tech:
   - Scrum
 ---
 
-Diseñé, desarrollé, mantuve y implementé código de producción para aplicaciones web destinadas a la gestión interna y generación de informes. Además, trabajé en el desarrollo de bibliotecas para uso interno, así como en la creación y mantenimiento de componentes en Angular.
+Designed, developed, maintained and deployed production code for web applications for internal management and reporting. Additionally, I worked on developing libraries for internal use, as well as creating and maintaining components in Angular.

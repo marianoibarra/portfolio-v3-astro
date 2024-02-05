@@ -3,7 +3,7 @@ const config = {
     {
       name: 'GitHub',
       icon: 'github',
-      url: 'https://github.com/MarianoIT1',
+      url: 'https://github.com/marianoibarra',
     },
     {
       name: 'LinkedIn',

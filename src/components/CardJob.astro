@@ -14,7 +14,7 @@ const { job: { body, data: { range, title, url, tech, company }}} = Astro.props
     <h3>
       { title }
       <a href={url}>
-        {company}
+        { company }
         <Icon name="external" />
         <span class="hover-glass"/>
       </a>

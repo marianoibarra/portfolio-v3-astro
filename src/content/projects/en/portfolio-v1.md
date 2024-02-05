@@ -1,7 +1,7 @@
 ---
 date: '2021-05-29'
 title: 'Portfolio v1'
-github: 'https://github.com/marianoibarra/portfolio-v2'
+github: 'https://github.com/marianoibarra/portfolio-v1'
 external: 'https://v1.marianoibarra.com'
 cover: '/src/content/projects/assets/portfolio.png'
 tech:
