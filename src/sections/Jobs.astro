@@ -19,7 +19,7 @@ jobs.sort((a, b) => Number(new Date(b?.data?.date)) - Number(new Date(a?.data?.d
   <ol>
     { jobs.map(job => <CardJob job={job} />) }
   </ol>
-  <a href="/download/resume - Mariano Ibarra.pdf" title="Download resume">
+  <a href="/download/resume - Mariano Ibarra.pdf" title="Download resume" target="_blank">
     <FancyLink mt={56}>
       { JOBS_DOWNLOAD }
     </FancyLink>
