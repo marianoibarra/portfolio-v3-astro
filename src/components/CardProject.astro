@@ -18,14 +18,14 @@ const { PROJECTS_SOURCE } = getI18N(Astro.currentLocale)
   <Image src={images[cover]()} alt={title} width={125} height={100} />
   <div class="card-data">
     <h3>
-      <a href={external}>
+      <a target="_blank" aria-label={title} rel="noopener noreferrer" href={external}>
         {title}
         <Icon name="external" />
         <span class="hover-glass"/>
       </a>
     </h3>
     <p>{ body }</p>
-    <a class="github" href={github}>
+    <a target="_blank" class="github" href={github}>
       <Icon name="github" />
       {PROJECTS_SOURCE}
     </a>

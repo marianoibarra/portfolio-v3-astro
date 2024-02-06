@@ -13,7 +13,8 @@ const config = {
     {
       name: 'Email',
       icon: 'email',
-      url: 'mailto:marianoibarratesta@outlook.com',
+      url: 'marianoibarratesta@outlook.com',
+      copy: true
     },
   ],
   NAV_LINKS: [

@@ -33,5 +33,8 @@
   "FOOTER_PART_4": "and deployed with",
   "FOOTER_PART_5": "All text is set in",
   "FOOTER_PART_6": "and",
-  "FOOTER_PART_7": " typeface"
+  "FOOTER_PART_7": " typeface",
+
+  "COPY_MSG": "Copied to clipboard",
+  "COPY_ARIA": "Copy "
 }

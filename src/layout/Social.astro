@@ -1,18 +1,40 @@
 ---
 import { Icon } from 'astro-icon';
 import { SOCIAL_MEDIA } from '../config'
-import LanguageSwitch from '../components/LanguageSwitch.astro'
+import { getI18N } from '../i18n';
+
+const { COPY_MSG, COPY_ARIA } = getI18N(Astro.currentLocale)
 ---
 
 <ul class="social">
-  { SOCIAL_MEDIA.map(({name, icon, url}) => 
+  { SOCIAL_MEDIA.map(({name, icon, url, copy}) => 
     <li>
-      <a href={url} aria-label={name} target="_blank" rel="noopener noreferrer" title={name}>
-        <Icon name={icon} />
-      </a>
+      {
+        copy 
+        ?  <a copy-trigger copy-value={url} copy-msg={COPY_MSG} aria-label={COPY_ARIA + name} title={COPY_ARIA + name}>
+            <Icon name={icon} />
+          </a>
+        : <a href={url} target="_blank" aria-label={name} rel="noopener noreferrer" title={name}>
+            <Icon name={icon} />
+          </a>  
+      }
     </li>
   )}
 </ul>
+
+<script>
+  const triggerElem = document.querySelector('[copy-trigger]')
+  triggerElem?.addEventListener('click', () => copy())
+
+  function copy() {
+    if(triggerElem) {
+      const value = triggerElem.getAttribute('copy-value') || ''
+      navigator.clipboard.writeText(value)
+      triggerElem.classList.add('copied')
+      setTimeout(() => triggerElem.classList.remove('copied'), 2000)
+    }
+  }
+</script>
 
 <style>
   .social {
@@ -23,5 +45,42 @@ import LanguageSwitch from '../components/LanguageSwitch.astro'
     padding: 0;
     & li { list-style: none; }
     & svg { height: 28px; }
+  }
+  [copy-trigger] {
+    position: relative;
+    cursor: pointer !important;
+  }
+
+  .copied::after {
+    position: absolute;
+    content: attr(copy-msg);
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 4px;
+    background-color: var(--green-tint);
+    color: var(--green);
+    text-wrap: nowrap;
+    left: 50%;
+    top: -42px;
+    padding: 6px 10px;
+    box-shadow: 0px 2px 14px -6px var(--navy-shadow);
+    border-top: 1px solid #fff1;
+    animation: fade-in 1000ms ease-in-out alternate 2 forwards;
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, 6px) scale(.9);
+    }
+
+    20% {
+      opacity: 1;
+      transform: translate(-50%, 0) scale(1);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, 0) scale(1);
+    }
   }
 </style>

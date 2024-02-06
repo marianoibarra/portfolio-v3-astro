@@ -33,5 +33,8 @@
   "FOOTER_PART_4": "y desplegado en",
   "FOOTER_PART_5": "Todo el texto está escrito en tipografía",
   "FOOTER_PART_6": "y",
-  "FOOTER_PART_7": ""
+  "FOOTER_PART_7": "",
+
+  "COPY_MSG": "Copiado",
+  "COPY_ARIA": "Copiar "
 }

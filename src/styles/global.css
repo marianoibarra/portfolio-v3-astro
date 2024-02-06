@@ -429,9 +429,5 @@ li.card-section {
     transition: all 150ms var(--easing);
     
     &:hover { opacity: 1 };
-
-    
   }
-
-
 }
