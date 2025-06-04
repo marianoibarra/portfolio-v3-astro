@@ -223,7 +223,8 @@ svg {
   }
 }
 
-a {
+a,
+.anchor {
   display: inline-block;
   text-decoration: none;
   text-decoration-skip-ink: auto;
@@ -234,37 +235,6 @@ a {
   &:hover,
   &:focus {
     color: var(--accent);
-  }
-
-  &.inline-link {
-    display: inline-block;
-    position: relative;
-    color: var(--white);
-    transition: var(--transition);
-
-    &:hover,
-    &:focus-visible {
-      color: var(--accent);
-      outline: 0;
-      &:after {
-        width: 98%;
-      }
-      & > * {
-        color: var(--accent) !important;
-        transition: var(--transition);
-      }
-    }
-    &:after {
-      content: "";
-      display: block;
-      width: 0;
-      height: 1px;
-      position: relative;
-      left: 1%;
-      bottom: 0.17em;
-      background-color: var(--accent);
-      opacity: 0.5;
-    }
   }
 }
 
@@ -300,7 +270,16 @@ p {
         transition: var(--transition);
       }
     }
-    &:after {
+    /* &::before {
+      content: "";
+      position: absolute;
+      top: -4px;
+      bottom: -4px;
+      left: -4px;
+      right: -4px;
+    } */
+
+    &::after {
       content: "";
       display: block;
       width: 0;

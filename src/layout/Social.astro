@@ -11,9 +11,9 @@ const { COPY_MSG, COPY_ARIA } = getI18N(Astro.currentLocale)
     <li>
       {
         copy 
-        ?  <a copy-trigger copy-value={url} copy-msg={COPY_MSG} aria-label={COPY_ARIA + name} title={COPY_ARIA + name}>
+        ?  <span class="anchor" role="link" copy-trigger copy-value={url} copy-msg={COPY_MSG} aria-label={COPY_ARIA + name} title={COPY_ARIA + name}>
             <Icon name={icon} />
-          </a>
+          </span>
         : <a href={url} target="_blank" aria-label={name} rel="noopener noreferrer" title={name}>
             <Icon name={icon} />
           </a>  

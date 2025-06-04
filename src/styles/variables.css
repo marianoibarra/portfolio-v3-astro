@@ -10,10 +10,8 @@
   --accent: #f77984;
   --accent-tint: #e06c751a;
 
-  --font-sans:
-    "Inter", "San Francisco", "SF Pro Text", -apple-system, system-ui,
-    sans-serif;
-  --font-mono: "SF-Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  --font-sans: var(--font-figtree);
+  --font-mono: var(--font-jetbrains);
 
   --fz-xxs: 12px;
   --fz-xs: 13px;

@@ -8,10 +8,10 @@ import LanguageSwitch from "../components/LanguageSwitch.astro";
 import { getI18N } from "../i18n";
 
 import "../styles/variables.css";
-import "../styles/fonts.css";
 import "../styles/global.css";
 import "../styles/responsive.css";
 import Analytics from "../components/Analytics.astro";
+import { Font } from "astro:assets";
 
 const { SITE_TITLE, SITE_DESCRIPTION } = getI18N(Astro.currentLocale);
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -49,6 +49,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
 
+    <Font cssVariable="--font-figtree" preload />
+    <Font cssVariable="--font-jetbrains" preload />
     <Analytics />
   </head>
   <body>
@@ -70,7 +72,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         </main>
       </div>
     </div>
-  </body><style>
+  </body>
+  
+  <style>
     .layout {
       width: 100%;
       max-width: var(--max-width);
