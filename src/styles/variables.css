@@ -1,24 +1,19 @@
 :root {
-  --dark-navy: #020c1b;
-  --navy: #0B1327;
-  --light-navy: #112240;
-  --lightest-navy: #233554;
+  --navy: rgb(16, 21, 26);
   --navy-shadow: rgba(2, 12, 27, 0.7);
-  --dark-slate: #6B8294;
-  --darkest-slate: #172539;
-  --slate: #97A1BA;
-  --light-slate: #a8b2d1;
-  --lightest-slate: #ccd6f6;
-  --img-border: 2px solid rgba(226,232,240,.1);
-  --img-border-hover: 2px solid rgba(226,232,240,.5);
+  --slate: rgb(191, 198, 205);
+  --dark-slate: rgb(162, 169, 176);
+  --img-background: rgb(23, 31, 38);
+  --img-border: 2px solid rgba(226, 232, 240, 0.1);
+  --img-border-hover: 2px solid rgba(226, 232, 240, 0.5);
   --white: #e2e8f0;
-  --green: #64ffda;
-  --green-tint: rgba(100, 255, 218, 0.1);
-  --pink: #f57dff;
-  --blue: #57cbff;
+  --accent: #f77984;
+  --accent-tint: #e06c751a;
 
-  --font-sans: 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
-  --font-mono: 'SF-Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+  --font-sans:
+    "Inter", "San Francisco", "SF Pro Text", -apple-system, system-ui,
+    sans-serif;
+  --font-mono: "SF-Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
 
   --fz-xxs: 12px;
   --fz-xs: 13px;
@@ -29,14 +24,14 @@
   --fz-xxl: 28px;
 
   --fz-heading1: clamp(48px, 3vw, 64px);
-  --fz-heading2: clamp(24px, 1.5vw, 32px);
+  --fz-heading2: clamp(16px, 1.125vw, 24px);
 
   --border-radius: 4px;
   --nav-height: 100px;
   --nav-scroll-height: 70px;
 
   --title-blur: blur(8px);
-  --title-bg: rgba(11,19,39,.75);
+  --title-bg: rgb(16, 21, 29, 0.7);
 
   --tab-height: 42px;
   --tab-width: 120px;

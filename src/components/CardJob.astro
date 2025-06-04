@@ -12,9 +12,9 @@ const { job: { body, data: { range, title, url, tech, company }}} = Astro.props
   <header>{range}</header>
   <div class="card-data d-job">
     <h3>
-      { title }
+      <span>{title}</span>
       <a target="_blank" aria-label={title} rel="noopener noreferrer" href={url}>
-        { company }
+        <span>{company}</span>
         <Icon name="external" />
         <span class="hover-glass"/>
       </a>
@@ -45,20 +45,19 @@ const { job: { body, data: { range, title, url, tech, company }}} = Astro.props
 
   .d-job {
     > h3 > a {
-      color: var(--light-slate);
+      color: var(--dark-slate);
       transition: all 150ms var(--easing);
       &:hover,
       &:focus-visible {
-        color: var(--green);
+        color: var(--accent);
       }
       &::before {
         position: relative;
         bottom: 2px;
-        margin-inline: 8px;
         margin-left: 8px;
-        margin-right: 4px;
+        margin-right: 2px;
         font-size: var(--fz-sm);
-        color: var(--green);
+        color: var(--accent);
         content: "@"
       }
     }

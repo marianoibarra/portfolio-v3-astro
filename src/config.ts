@@ -21,27 +21,23 @@ const config = {
   NAV_LINKS: ["#about", "#jobs", "#projects"],
   SKILLS: [
     "JavaScript (ES6+)",
-    "TypeScript",
-    "Astro",
-    "React",
-    "React Native",
-    "Angular",
-    "Next.js",
-    "Gatsby",
     "Node.js",
-    "Express",
-    "Sequelize",
-    "PostgreSQL",
-    "MongoDB",
+    "C#",
+    ".NET Core",
+    "SQL",
+    "TypeScript",
+    "Next.js",
+    "Astro",
+    "MAUI",
+    "WPF",
+    "React",
+    "WinUI 3",
+    "Tailwind CSS",
+    "Sass",
     "GraphQL",
   ],
   SECTION_HEIGHT_RATIO: 0.35,
-  PROJECTS_LIMIT: 3,
-  COLORS: {
-    green: "#64ffda",
-    navy: "#0f172a",
-    darkNavy: "#020c1b",
-  },
 };
 
-export const { SOCIAL_MEDIA, NAV_LINKS, SKILLS, SECTION_HEIGHT_RATIO, PROJECTS_LIMIT, COLORS, URL } = config;
+export const { SOCIAL_MEDIA, NAV_LINKS, SKILLS, SECTION_HEIGHT_RATIO, URL } =
+  config;

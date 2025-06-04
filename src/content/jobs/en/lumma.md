@@ -1,10 +1,10 @@
 ---
-date: '2022-06-21'
-title: 'Fullstack Developer'
-company: 'Lumma'
-location: 'Buenos Aires, ARG'
-range: '2022 — 2023'
-url: 'https://4demotion.com/'
+date: "2022-06-21"
+title: "Fullstack Developer"
+company: "Lumma"
+location: "Buenos Aires, ARG"
+range: "2022 — 2023"
+url: "https://4demotion.com/"
 tech:
   - React
   - Styled components
@@ -14,6 +14,10 @@ tech:
   - Django
   - Socket IO
   - Scrum
+  - Git
+  - GitLab
+  - Java
+  - Web Accesibility
 ---
 
-I developed and designed interactive web applications for a Set-Top Box (STB). The main challenge was to create an intuitive and user-friendly navigation, given that all user interactions are performed through a remote control. My focus was on adapting functionalities and the user interface to the remote control, optimizing controls and buttons for seamless interaction. Additionally, I worked on the appealing design of the applications and closely collaborated with the development team to ensure their optimal performance on the Set-Top Box.
+Designed and developed core apps for a Smart TV OS, focusing on performance and remote-friendly UX on limited hardware. Led the creation of intuitive interfaces, built fullstack apps optimized for low-resource environments, and ensured real-world stability through hands-on testing on physical devices.

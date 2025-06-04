@@ -3,9 +3,9 @@
   const updateMousePosition = ({clientX: x, clientY: y}: {clientX: number, clientY: number}) => {
     if(element) {
       if(window.matchMedia('(min-width: 768px)').matches) {
-        element.style.background = `radial-gradient(600px at ${x}px ${y}px, rgba(29, 78, 216, 0.15), transparent 80%)`;
+        element.style.background = `radial-gradient(600px at ${x}px ${y}px, rgba(96, 101, 109, 0.15), transparent 80%)`;
       } else {
-        element.style.background = `radial-gradient(600px at 0px 0px, rgba(29, 78, 216, 0.15), transparent 80%)`;
+        element.style.background = `radial-gradient(600px at 0px 0px, rgba(96, 101, 109, 0.15), transparent 80%)`;
       }
     }
   };
@@ -23,6 +23,6 @@
     height: 100vh;
     pointer-events: none;
     z-index: 30;
-    background: radial-gradient(600px at 0px 0px, rgba(29, 78, 216, 0.15), transparent 80%);
+    background: radial-gradient(600px at 0px 0px, rgba(96, 101, 109, 0.15), transparent 80%);
   }
 </style>

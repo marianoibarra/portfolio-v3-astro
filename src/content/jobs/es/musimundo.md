@@ -1,18 +1,23 @@
 ---
-date: '2024-02-02'
-title: 'Development Analist'
-company: 'Musimundo'
-location: 'Buenos Aires, ARG'
-range: '2023 — PRESENTE'
-url: 'https://musimundo.com/'
-tech: 
+date: "2024-02-02"
+title: "Software Engineer"
+company: "On City"
+location: "Buenos Aires, ARG"
+range: "2023 — PRESENT"
+url: "https://oncity.com/"
+tech:
   - Angular
-  - Material Design
-  - Rxjs
-  - OOP
-  - Team Foundation Server
+  - RxJS
+  - TypeScript
+  - .NET
+  - C#
+  - SQL
+  - Clean Architecture
+  - Domain driven design
+  - Azure DevOps
   - Figma
   - Scrum
+  - Karma
 ---
 
-Diseñé, desarrollé, mantuve y implementé código de producción para aplicaciones web destinadas a la gestión interna y generación de informes. Además, trabajé en el desarrollo de bibliotecas para uso interno, así como en la creación y mantenimiento de componentes en Angular.
+Lideré el equipo frontend en un entorno ágil, diseñando y desarrollando herramientas internas con Angular y .NET para optimizar los procesos de negocio principales. Implementé funcionalidades escalables como el flujo de venta de seguros digitales, la tercerización automatizada de deudores e integraciones complejas con SAP. Participé en el prototipado de experiencia de usuario (UX) con Figma, la toma de decisiones técnicas y el análisis de las partes interesadas para garantizar soluciones robustas y centradas en el usuario.
