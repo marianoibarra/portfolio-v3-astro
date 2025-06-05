@@ -10,9 +10,6 @@
   --accent: #f77984;
   --accent-tint: #e06c751a;
 
-  --font-sans: var(--font-figtree);
-  --font-mono: var(--font-jetbrains);
-
   --fz-xxs: 12px;
   --fz-xs: 13px;
   --fz-sm: 14px;
