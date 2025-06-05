@@ -15,7 +15,7 @@ const { PROJECTS_SOURCE } = getI18N(Astro.currentLocale)
 ---
 
 <li class="card-section">
-  <Image src={images[cover]()} alt={title} width={125} height={100} />
+  <Image  src={images[cover]()} alt={title} width={125} height={100} loading="lazy" />
   <div class="card-data">
     <h3>
       <a target="_blank" aria-label={title} rel="noopener noreferrer" href={external}>

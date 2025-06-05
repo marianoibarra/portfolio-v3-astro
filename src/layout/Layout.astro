@@ -50,6 +50,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
 
+    <script>
+      document.fonts.ready.then(() => {
+        document.documentElement.classList.add('fonts-loaded');
+      });
+    </script>
+
     <Fonts />
     <Analytics />
   </head>
@@ -75,13 +81,21 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   </body>
   
   <style>
+    html.fonts-loaded .layout {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
     .layout {
+      transition: all 300ms ease-in-out;
+      transform: translate3d(0, 24px, 0);
+      opacity: 0;
+      display: flex;
       width: 100%;
       max-width: var(--max-width);
       min-height: 100vh;
       margin: 0 auto;
       padding: 0px var(--body-padding);
-      display: flex;
       counter-reset: section 0;
       gap: 1rem;
 

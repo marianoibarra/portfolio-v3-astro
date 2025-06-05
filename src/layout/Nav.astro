@@ -24,10 +24,10 @@ const { LINKS } : { LINKS: {[key: string]: string} } = getI18N(Astro.currentLoca
 
 <nav>
   <ul>
-    {NAV_LINKS.map(url => {
+    {NAV_LINKS.map((url,i) => {
       const lang = getLangFromUrl(Astro.url)
       return (
-        <li>
+        <li class={i === 0 ? 'active' : ''}>
           <a href={`${lang}${url}`}>
             <span/>
             <span>{LINKS[url]}</span>
